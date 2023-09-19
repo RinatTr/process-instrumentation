@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 90vh;
+  height: 100vh;
 }
 
 .App-header {
@@ -32,8 +32,17 @@
   color: #61dafb;
 }
 
+main {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
 main .container {
+  width: 70vw;
+  border: 0.3rem solid;
   display: flex;
   flex-direction: column;
-  align-items: space-between;
+  justify-content: space-between;
+  padding: 20px;
 }
