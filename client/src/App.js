@@ -1,9 +1,27 @@
 import './App.css';
-import Controller from './components/views/Controller';
+import fetchTerms from './API/fetchTerms'
+import { useEffect, useState } from "react";
+import Header from './components/views/Header';
 import Results from './components/views/Results';
 import Term from './components/views/Term';
 
+
 function App() {
+  const [terms, setTerms] = useState([]);
+  const [searchInput, setSearchInput] = useState("");
+  const [selectedGroup, setSelectedGroup] = useState(null);
+
+  useEffect(() => {
+    const loadTerms = async () => {
+      const terms = await fetchTerms();
+      setTerms(terms);
+    };
+
+    loadTerms();
+    console.log(terms)
+  }, []);
+  
+//TODO: conditional render: Authorized / not
   return (
     <div className="App">
       <header className="App-header">
@@ -11,7 +29,7 @@ function App() {
       </header>
       <main>
         <div className="container">
-          <Controller />
+          <Header />
           <Results />
           <Term />
         </div>

@@ -1,4 +1,4 @@
-const Controller = () => {
+const Header = () => {
     return (
         <div>
             hello, hi, I'm the problem it's me.
@@ -6,4 +6,4 @@ const Controller = () => {
     )
 }
 
-export default Controller;
+export default Header;
