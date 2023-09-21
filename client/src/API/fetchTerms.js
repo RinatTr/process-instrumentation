@@ -11,10 +11,14 @@ const fetchTerms = async () => {
       let response = await fetch(URL);
       
       if (!response.ok) {
+        throw new Error("BLAT FETCH FAIL")
+      } else {
         let json = await response.json();
+        console.log(json, "hello")
         return json;
       }
-      
+
+
   } catch(e) {
       console.log(e, "Error during fetch");
   }

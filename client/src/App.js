@@ -18,7 +18,7 @@ function App() {
     };
 
     loadTerms();
-    console.log(terms)
+
   }, []);
   
 //TODO: conditional render: Authorized / not
