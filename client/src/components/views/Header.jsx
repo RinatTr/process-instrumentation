@@ -1,7 +1,13 @@
-const Header = () => {
+import Dropdown from "./Dropdown";
+
+const Header = ({groups, setSelectedGroup}) => {
     return (
         <div>
-            hello, hi, I'm the problem it's me.
+            <Dropdown 
+                label={"Select Group"}
+                options={groups}
+                setSelected={setSelectedGroup} 
+                />
         </div>
     )
 }
