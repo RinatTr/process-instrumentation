@@ -18,16 +18,16 @@ function App() {
       const terms = await fetchTerms();
       setTerms(terms);
       setGroups(extractGroupNames(terms));
-
     };
     loadTerms();
-
   }, []);
 
   useEffect(() => {
-    console.log(selectedGroup)
+    //execute search logic
+    
   },[selectedGroup])
   
+  console.log(selectedGroup, searchInput)
 //TODO: conditional render: Authorized / not
   return (
     <div className="App">
@@ -38,8 +38,10 @@ function App() {
       <main>
         <div className="container">
           <Header 
-              setSelectedGroup={setSelectedGroup}
               groups={groups}
+              setSelectedGroup={setSelectedGroup}
+              searchInput={searchInput}
+              setSearchInput={setSearchInput}
             />
           <Results />
           <Term />

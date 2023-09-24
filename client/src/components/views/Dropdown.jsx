@@ -1,3 +1,4 @@
+import '../../Field.css';
 /**
  * Renders a dropdown element.
  * @param {<!Array<string>} options - The select options.
@@ -13,12 +14,13 @@
     };
   
     return (
-      <div className="dropdown">
+      <div className="field dropdown">
         <label>{label}</label>
         <select
           onChange={(e) => onChange(e)}
-          className="custom-select"
+          className="custom-select field-style"
         >
+          <option value="" disabled selected >-select group-</option>
           {options.map((option, index) => (
             <option key={index} value={option}>
               {option}
