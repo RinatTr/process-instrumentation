@@ -9,15 +9,14 @@ import '../../Field.css';
  */
 
  const Input = ({ value, setInput }) => {
-    const onChange = (e) => {
-
+    const handleChange = (e) => {
       setInput(e.target.value);
     };
   
     return (
       <div className="field input">
         <label>Search</label>
-        <input value={value} className="field-style" name="Search" onChange={(e) => onChange(e)}/>
+        <input value={value} className="field-style" name="Search" onChange={(e) => handleChange(e)}/>
       </div>
     );
   };

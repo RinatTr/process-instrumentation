@@ -8,25 +8,31 @@ import '../../Field.css';
  * @return {!React.ReactElement}
  */
 
- const Dropdown = ({ options, label, setSelected}) => {
-    const onChange = (e) => {
+ const Dropdown = ({ value, options, label, setSelected}) => {
+    const handleChange = (e) => {
       setSelected(e.target.value);
     };
-  
+
+    const reset = () => {
+      setSelected("")
+    }
+
     return (
       <div className="field dropdown">
         <label>{label}</label>
         <select
-          onChange={(e) => onChange(e)}
+          onChange={(e) => handleChange(e)}
           className="custom-select field-style"
+          value={value}
         >
-          <option value="" disabled selected >-select group-</option>
+          <option value="" disabled selected >-select-</option>
           {options.map((option, index) => (
-            <option key={index} value={option}>
+            <option key={index} value={option} selected>
               {option}
             </option>
           ))}
         </select>
+        <button onClick={() => reset()}>reset</button>
       </div>
     );
   };

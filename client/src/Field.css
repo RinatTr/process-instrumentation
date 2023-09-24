@@ -1,14 +1,12 @@
 .field {
     display: inline-block;
-    position: relative;
-
-    
+    position: relative;    
   }
   
   .field > label {
     background-color: white;
     font-size: 10px;
-    font-weight: 700;
+    font-weight: 600;
     left: 4px;
     padding: 0 6px;
     position: absolute;
@@ -30,8 +28,8 @@
 
   .field-style {
     border-radius: 6px;
-    border: 1px solid #3d49d6;
+    border: 1px solid #58a0e4;
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 600;
     padding: 6px 28px 7px 8px;
   }
