@@ -46,3 +46,9 @@ main .container {
   justify-content: space-between;
   padding: 20px;
 }
+
+main .results {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}

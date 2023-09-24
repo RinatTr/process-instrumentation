@@ -8,13 +8,13 @@ const Header = ({groups, selectedGroup, setSelectedGroup, searchInput, setSearch
                 value={searchInput}
                 setInput={setSearchInput} 
                />
-               
             <Dropdown 
                 label={"Filter by group"}
                 options={groups}
                 value={selectedGroup}
                 setSelected={setSelectedGroup} 
-               />
+                isDisabled={!searchInput.length}
+               /> 
         </div>
     )
 }

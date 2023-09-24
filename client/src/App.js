@@ -10,8 +10,10 @@ import Term from './components/views/Term';
 function App() {
 
   const rawTerms = useRef([]);
+  const groups = useRef([]);
+  const searchedTermsCache = useRef([]);
+    
   const [viewTerms, setViewTerms] = useState([]);
-  const [groups, setGroups] = useState([]);
   const [searchInput, setSearchInput] = useState("");
   const [selectedGroup, setSelectedGroup] = useState("");
 
@@ -19,25 +21,34 @@ function App() {
     const loadTerms = async () => {
       const responseData = await fetchTerms();
       rawTerms.current = responseData;
+      searchedTermsCache.current = responseData;
       // setTerms(responseData);
-      setGroups(extractGroupNames(responseData));
+      groups.current = extractGroupNames(responseData);
     };
     loadTerms();
   }, []);
 
   useEffect(() => {
-    //execute search logic
-    setViewTerms(filterBySearchInput(rawTerms.current, searchInput))
+    //reset selectedGroup
+    setSelectedGroup("");
 
+    //execute search (filter by prefix) 
+    let filtered = filterBySearchInput(rawTerms.current, searchInput)
+    searchedTermsCache.current = filtered;
+
+    setViewTerms(filterBySearchInput(rawTerms.current, searchInput))
   },[searchInput])
   
-  // useEffect(() => {
-  //    //execute filter logic 
-  //    if (searchedTerms.length) {setTerms(filterByGroup(searchedTerms, selectedGroup, groups))} 
-  // },[selectedGroup])
+  useEffect(() => {
+     //execute filter by group 
+     if (searchInput.length) {
+       setViewTerms(filterByGroup(searchedTermsCache.current, selectedGroup, groups.current))
+      } 
+  },[selectedGroup])
 
   console.log("fin",searchInput,viewTerms.length)
 //TODO: conditional render: Authorized / not
+
   return (
     <div className="App">
       <header className="App-header">
@@ -47,7 +58,7 @@ function App() {
       <main>
         <div className="container">
           <Header 
-              groups={groups}
+              groups={groups.current}
               selectedGroup={selectedGroup}
               setSelectedGroup={setSelectedGroup}
               searchInput={searchInput}

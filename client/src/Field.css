@@ -4,13 +4,13 @@
   }
   
   .field > label {
-    background-color: white;
+    /* background-color: white; */
     font-size: 10px;
-    font-weight: 600;
-    left: 4px;
-    padding: 0 6px;
+    font-weight: 500;
+    left: 8px;
+    /* padding: 0 6px; */
     position: absolute;
-    top: -5px;
+    top: 1px;
   }
   
   .field select {
@@ -31,5 +31,5 @@
     border: 1px solid #58a0e4;
     font-size: 16px;
     font-weight: 600;
-    padding: 6px 28px 7px 8px;
+    padding: 10px 28px 7px 10px;
   }

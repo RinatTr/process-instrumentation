@@ -1,6 +1,6 @@
 const Results = ({terms}) => {
     return (
-        <div>
+        <div className="results">
             {terms.map((term) => <span>{term["term_en"]}</span>)}
         </div>
     )
