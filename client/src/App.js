@@ -1,6 +1,6 @@
 import './App.css';
 import fetchTerms from './API/fetchTerms'
-import { extractGroupNames, filterByGroup, filterBySearchInput } from './helpers';
+import { extractGroupNames, extractModuleNames, filterByGroup, filterBySearchInput } from './helpers';
 import { useEffect, useState, useRef } from "react";
 import Header from './components/views/Header';
 import Results from './components/views/Results';
@@ -11,19 +11,22 @@ function App() {
 
   const rawTerms = useRef([]);
   const groups = useRef([]);
+  const modules = useRef([]);
   const searchedTermsCache = useRef([]);
     
   const [viewTerms, setViewTerms] = useState([]);
   const [searchInput, setSearchInput] = useState("");
-  const [selectedGroup, setSelectedGroup] = useState("");
+  const [selectedGroup, setSelectedGroup] = useState(""); //initialValue set as disabled select option value
+  const [selectedModule, setSelectedModule] = useState(""); //initialValue set as disabled select option value
 
   useEffect(() => {
     const loadTerms = async () => {
       const responseData = await fetchTerms();
       rawTerms.current = responseData;
       searchedTermsCache.current = responseData;
-      // setTerms(responseData);
+      
       groups.current = extractGroupNames(responseData);
+      modules.current = extractModuleNames(responseData);
     };
     loadTerms();
   }, []);
@@ -59,8 +62,11 @@ function App() {
         <div className="container">
           <Header 
               groups={groups.current}
+              modules={modules.current}
               selectedGroup={selectedGroup}
               setSelectedGroup={setSelectedGroup}
+              selectedModule={selectedModule}
+              setSelectedModule={setSelectedModule}
               searchInput={searchInput}
               setSearchInput={setSearchInput}
             />

@@ -8,7 +8,6 @@
 
 .App-header {
   background-color: #5b616d;
-  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,21 +33,53 @@
 
 main {
   display: flex;
-  justify-content: center;
   height: 100%;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
 }
 
-main .container {
-  width: 70vw;
-  border: 0.3rem solid;
+.container { 
   display: flex;
   flex-direction: column;
+  width: 80vw;
   justify-content: space-between;
   padding: 20px;
 }
+.results-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
 
-main .results {
+.results-container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: flex-start;
+  line-height: 1.6em;
+  border: 0.1rem solid #58a0e4;
+  margin: 10px;
+  /* padding-left: 4px;   */
+  height: 35vh;
+  max-height: 35vh;
+  width: 80%; 
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
+
+/* Results rows */
+.results-row {
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 4px;
+}
+.results-row:hover {
+  background-color:rgb(255, 230, 149);
+}
+.odd {
+  background-color:rgb(248, 248, 248);
+}
+

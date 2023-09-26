@@ -1,8 +1,13 @@
 // Extracts group names from raw terms data
 const GROUP_KEY = "group_en";
+const MODULE_KEY = "presentation_ID"
 
 export function extractGroupNames(termsData) {
     return Array.from(new Set(termsData.map(term => term[GROUP_KEY])));
+}
+
+export function extractModuleNames(termsData) {
+    return Array.from(new Set(termsData.map(term => term[MODULE_KEY]))).sort();
 }
 
 export function filterByGroup(terms, group, groups) {
@@ -16,7 +21,7 @@ export function filterBySearchInput(rawTerms, searchInput) {
     //check for reset
     searchInput = searchInput.toLowerCase();
     let sliceIndex = searchInput.length;
-    
+
     if (!searchInput.length) return rawTerms;
 
     return rawTerms.filter(term => {
