@@ -22,13 +22,13 @@ const Header = ({   groups,
                 setSelected={setSelectedGroup} 
                 isDisabled={!searchInput.length}
                /> 
-             <Dropdown 
+             {/* <Dropdown 
                 label={"Filter by Module"}
                 options={modules}
                 value={selectedModule}
                 setSelected={setSelectedModule} 
                 isDisabled={!searchInput.length}
-               /> 
+               />  */}
         </div>
     )
 }
