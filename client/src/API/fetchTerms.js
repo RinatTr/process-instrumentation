@@ -4,7 +4,7 @@
 
     
 */
-const URL = `https://script.google.com/macros/s/AKfycbzxu84D6_iUZNdAqYyCPulo090K3fqaUHy85nM0Ql2as0IcPclv2Nt4C7HKSBS0o4eX/exec`
+const URL = `https://script.google.com/macros/s/AKfycbxyYOgUpObCqLMC0R-ea3nxy84a9o7cpnSEZIpbrxZwVYsxMubtAQgwowroD3Xb5ndS/exec`;
 
 const fetchTerms = async () => {
   try {
@@ -18,7 +18,7 @@ const fetchTerms = async () => {
       }
 
   } catch(e) {
-      console.log("Error during fetching terms:", e);
+      console.log("Error during fetching terms", e);
   }
 }
 

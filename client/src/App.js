@@ -15,6 +15,7 @@ function App() {
   const searchedTermsCache = useRef([]);
     
   const [viewTerms, setViewTerms] = useState([]);
+  const [populatedTerm, setPopulatedTerm] = useState({});
   const [searchInput, setSearchInput] = useState("");
   const [selectedGroup, setSelectedGroup] = useState(""); //initialValue set as disabled select option value
   const [selectedModule, setSelectedModule] = useState(""); //initialValue set as disabled select option value
@@ -49,7 +50,10 @@ function App() {
       } 
   },[selectedGroup])
 
-  console.log("fin",searchInput,viewTerms.length)
+  const findAndSetTerm = (selectedTermID) => {
+    let foundTerm = viewTerms.find(term => term.id === selectedTermID)
+      setPopulatedTerm(foundTerm);
+  }
 //TODO: conditional render: Authorized / not
 
   return (
@@ -70,8 +74,11 @@ function App() {
               searchInput={searchInput}
               setSearchInput={setSearchInput}
             />
-          <Results terms={viewTerms}/>
-          <Term />
+          <Results  
+              terms={viewTerms} 
+              sendTermID={findAndSetTerm} 
+            />
+          <Term termObj={populatedTerm} />
         </div>
       </main>
       <footer className="App-footer">

@@ -1,13 +1,17 @@
-const Term = ({terms}) => {
-
+const Term = ({termObj}) => {
+  console.log(termObj)
   return (
       <div className="term-wrapper">
-          <div className="term-container">
-              <div className="group-name">instrument 4.2</div>
-              <div className="term-en">term-en</div>
-              <div className="term-heb">מונח בעברית</div>
-              <div className="definition">הגדרה בעברית בלה בלה בלה..</div>
+        { termObj.id !== undefined ? 
+          (
+           <div className="term-container">
+            <div className="group-name">{`${termObj["group_en"]} | ${termObj["presentation_ID"]}`}</div>
+            <div className="term-en">{termObj["term_en"]}</div>
+            <div className="term-heb">{termObj["term_heb"]}</div>
+            <div className="definition">{termObj["definition_heb"]}</div>
           </div>
+          ) : ""
+          }       
       </div>
   )
 }
