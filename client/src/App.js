@@ -1,6 +1,6 @@
 import './App.css';
 import fetchTerms from './API/fetchTerms'
-import { extractGroupNames, extractModuleNames, filterByGroup, filterBySearchInput } from './helpers';
+import { extractGroupNames, extractModuleNames, filterByGroup, filterBySearchInput } from './consts';
 import { useEffect, useState, useRef } from "react";
 import Header from './components/views/Header';
 import Results from './components/views/Results';

@@ -1,23 +1,26 @@
 // Extracts group names from raw terms data
-const GROUP_KEY = "group_en";
-const MODULE_KEY = "presentation_ID"
+ const GROUP_KEY = "group_en";
+ const MODULE_KEY = "presentation_ID";
+ const TERM_EN_KEY = "term_en"; 
+ const TERM_HEB_KEY = "term_heb";
+ const DEFINITION_HEB_KEY = "definition_heb";
 
-export function extractGroupNames(termsData) {
+ function extractGroupNames(termsData) {
     return Array.from(new Set(termsData.map(term => term[GROUP_KEY])));
 }
 
-export function extractModuleNames(termsData) {
+ function extractModuleNames(termsData) {
     return Array.from(new Set(termsData.map(term => term[MODULE_KEY]))).sort();
 }
 
-export function filterByGroup(terms, group, groups) {
+ function filterByGroup(terms, group, groups) {
     //check for reset
     if (!groups.includes(group)) return terms;
 
     return terms.filter(term => term.group_en === group);
 }
 
-export function filterBySearchInput(rawTerms, searchInput) {
+ function filterBySearchInput(rawTerms, searchInput) {
     //check for reset
     searchInput = searchInput.toLowerCase();
     let sliceIndex = searchInput.length;
@@ -28,4 +31,16 @@ export function filterBySearchInput(rawTerms, searchInput) {
         let prefix = term["term_en"].slice(0, sliceIndex).toLowerCase();
         return prefix === searchInput
         });
+}
+
+export {
+    GROUP_KEY,
+    MODULE_KEY,
+    TERM_EN_KEY,
+    TERM_HEB_KEY,
+    DEFINITION_HEB_KEY,
+    extractGroupNames,
+    extractModuleNames,
+    filterByGroup,
+    filterBySearchInput,
 }
