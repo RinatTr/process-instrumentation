@@ -10,25 +10,27 @@ const Header = ({   groups,
                     searchInput, 
                     setSearchInput}) => {
     return (
-        <div className="header-container">
-            <Input 
-                value={searchInput}
-                setInput={setSearchInput} 
-               />
-            <Dropdown 
-                label={"Filter by group"}
-                options={groups}
-                value={selectedGroup}
-                setSelected={setSelectedGroup} 
-                isDisabled={!searchInput.length}
-               /> 
-             {/* <Dropdown 
-                label={"Filter by Module"}
-                options={modules}
-                value={selectedModule}
-                setSelected={setSelectedModule} 
-                isDisabled={!searchInput.length}
-               />  */}
+        <div className="header-wrapper">
+            <div className="header-container">
+                <Input 
+                    value={searchInput}
+                    setInput={setSearchInput} 
+                />
+                <Dropdown 
+                    label={"Filter by group"}
+                    options={groups}
+                    value={selectedGroup}
+                    setSelected={setSelectedGroup} 
+                    isDisabled={!searchInput.length}
+                /> 
+                {/* <Dropdown 
+                    label={"Filter by Module"}
+                    options={modules}
+                    value={selectedModule}
+                    setSelected={setSelectedModule} 
+                    isDisabled={!searchInput.length}
+                />  */}
+            </div>
         </div>
     )
 }

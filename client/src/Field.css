@@ -6,9 +6,9 @@
   .field > label {
     font-size: 10px;
     font-weight: 600;
-    left: 8px;
+    left: 14px;
     position: absolute;
-    top: 1px;
+    top: 3px;
   }
   
   .field select {
@@ -24,9 +24,9 @@
   } 
 
   .field-style {
-    border-radius: 4px;
+    /* border-radius: px; */
+    font-family: Paladino;
     border: 1px solid #58a0e4;
     font-size: 18px;
-    /* font-weight: 600; */
     padding: 14px 28px 7px 14px;
   }
