@@ -76,7 +76,7 @@ function App() {
             />
           <Results  
               terms={viewTerms} 
-              sendTermID={findAndSetTerm} 
+              collectTermID={findAndSetTerm} 
             />
           <Term termObj={populatedTerm} />
         </div>

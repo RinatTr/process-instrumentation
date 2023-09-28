@@ -1,9 +1,9 @@
-const Results = ({sendTermID, terms}) => {
+const Results = ({collectTermID, terms}) => {
     const isOdd = (num) => {
         return num % 2 !== 1;
     }
     const handleClick = (id) => {
-        sendTermID(id);
+        collectTermID(id);
       }
     return (
         <div className="results-wrapper">
