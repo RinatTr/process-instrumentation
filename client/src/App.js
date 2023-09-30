@@ -10,13 +10,13 @@ import Term from './components/views/Term';
 function App() {
 
   const rawTerms = useRef([]);
-  const groups = useRef([]);
-  const modules = useRef([]);
   const searchedTermsCache = useRef([]);
     
   const [viewTerms, setViewTerms] = useState([]);
   const [populatedTerm, setPopulatedTerm] = useState({});
   const [searchInput, setSearchInput] = useState("");
+  const [groups, setGroups] = useState([]);
+  const [modules, setModules] = useState([]);
   const [selectedGroup, setSelectedGroup] = useState(""); //initialValue set as disabled select option value
   const [selectedModule, setSelectedModule] = useState(""); //initialValue set as disabled select option value
 
@@ -27,17 +27,17 @@ function App() {
       rawTerms.current = responseData;
       searchedTermsCache.current = responseData;
 
-      groups.current = extractGroupNames(responseData);
-      modules.current = extractModuleNames(responseData);
+      setGroups(extractGroupNames(responseData));
+      setModules(extractModuleNames(responseData));
     };
     loadTerms();
   }, []);
 
   useEffect(() => {
     //Search Functionality
-
-    //reset selectedGroup
+    //reset selected Group and Module
     setSelectedGroup("");
+    setSelectedModule("");
 
     //reset term display
     if (!searchInput.length) {
@@ -52,12 +52,12 @@ function App() {
   
   useEffect(() => {
      //execute filter by group 
-       setViewTerms(filterByGroup(searchedTermsCache.current, selectedGroup, groups.current))
+       setViewTerms(filterByGroup(searchedTermsCache.current, selectedGroup, groups))
   },[selectedGroup]);
 
   useEffect(() => {
      //execute filter by module
-     setViewTerms(filterByModule(rawTerms.current, selectedModule, modules.current))
+     setViewTerms(filterByModule(rawTerms.current, selectedModule, modules))
   },[selectedModule]);
 
   const findAndSetTerm = (selectedTermID) => {
@@ -73,8 +73,8 @@ function App() {
       <main>
         <div className="container">
           <Header 
-              groups={groups.current}
-              modules={modules.current}
+              groups={groups}
+              modules={modules}
               selectedGroup={selectedGroup}
               setSelectedGroup={setSelectedGroup}
               selectedModule={selectedModule}
