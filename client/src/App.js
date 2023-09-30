@@ -36,6 +36,10 @@ function App() {
     //reset selectedGroup
     setSelectedGroup("");
 
+    //reset term display
+    if (!searchInput.length) {
+      setPopulatedTerm({});
+    }
     //execute search (filter by prefix) 
     let filtered = filterBySearchInput(rawTerms.current, searchInput)
     searchedTermsCache.current = filtered;

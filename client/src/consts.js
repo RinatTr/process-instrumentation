@@ -25,7 +25,7 @@
     searchInput = searchInput.toLowerCase();
     let sliceIndex = searchInput.length;
 
-    if (!searchInput.length) return rawTerms;
+    if (!searchInput.length) return [];
 
     return rawTerms.filter(term => {
         let prefix = term["term_en"].slice(0, sliceIndex).toLowerCase();
