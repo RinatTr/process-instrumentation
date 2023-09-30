@@ -8,7 +8,7 @@ import '../../Field.css';
  * @return {!React.ReactElement}
  */
 
- const Input = ({ value, setInput }) => {
+ const Input = ({ value, setInput, isDisabled }) => {
     const handleChange = (e) => {
       setInput(e.target.value);
     };
@@ -16,7 +16,7 @@ import '../../Field.css';
     return (
       <div className="field input">
         <label>Search</label>
-        <input value={value} className="field-style" name="Search" onChange={(e) => handleChange(e)}/>
+        <input disabled={isDisabled} value={value} className="field-style" name="Search" onChange={(e) => handleChange(e)}/>
       </div>
     );
   };

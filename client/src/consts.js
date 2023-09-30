@@ -6,7 +6,7 @@
  const DEFINITION_HEB_KEY = "definition_heb";
 
  function extractGroupNames(termsData) {
-    return Array.from(new Set(termsData.map(term => term[GROUP_KEY])));
+    return Array.from(new Set(termsData.map(term => term[GROUP_KEY]))).sort();
 }
 
  function extractModuleNames(termsData) {
@@ -17,7 +17,15 @@
     //check for reset
     if (!groups.includes(group)) return terms;
 
-    return terms.filter(term => term.group_en === group);
+    return terms.filter(term => term[GROUP_KEY] === group);
+}
+
+function filterByModule(terms, moduleId, modules) {
+    let parsed = parseFloat(moduleId);
+    //check for reset
+    if (!modules.includes(parsed)) return terms;
+
+    return terms.filter(term => term[MODULE_KEY] === parsed);
 }
 
  function filterBySearchInput(rawTerms, searchInput) {
@@ -43,4 +51,5 @@ export {
     extractModuleNames,
     filterByGroup,
     filterBySearchInput,
+    filterByModule
 }

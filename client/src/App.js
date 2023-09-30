@@ -1,6 +1,6 @@
 import './App.css';
 import fetchTerms from './API/fetchTerms'
-import { extractGroupNames, extractModuleNames, filterByGroup, filterBySearchInput } from './consts';
+import { extractGroupNames, extractModuleNames, filterByGroup, filterBySearchInput, filterByModule } from './consts';
 import { useEffect, useState, useRef } from "react";
 import Header from './components/views/Header';
 import Results from './components/views/Results';
@@ -21,11 +21,12 @@ function App() {
   const [selectedModule, setSelectedModule] = useState(""); //initialValue set as disabled select option value
 
   useEffect(() => {
+    //Fetches and loads on first render
     const loadTerms = async () => {
       const responseData = await fetchTerms();
       rawTerms.current = responseData;
       searchedTermsCache.current = responseData;
-      
+
       groups.current = extractGroupNames(responseData);
       modules.current = extractModuleNames(responseData);
     };
@@ -33,6 +34,8 @@ function App() {
   }, []);
 
   useEffect(() => {
+    //Search Functionality
+
     //reset selectedGroup
     setSelectedGroup("");
 
@@ -45,24 +48,27 @@ function App() {
     searchedTermsCache.current = filtered;
 
     setViewTerms(filterBySearchInput(rawTerms.current, searchInput))
-  },[searchInput])
+  },[searchInput]);
   
   useEffect(() => {
      //execute filter by group 
        setViewTerms(filterByGroup(searchedTermsCache.current, selectedGroup, groups.current))
-  },[selectedGroup])
+  },[selectedGroup]);
+
+  useEffect(() => {
+     //execute filter by module
+     setViewTerms(filterByModule(rawTerms.current, selectedModule, modules.current))
+  },[selectedModule]);
 
   const findAndSetTerm = (selectedTermID) => {
     let foundTerm = viewTerms.find(term => term.id === selectedTermID)
       setPopulatedTerm(foundTerm);
   }
-//TODO: conditional render: Authorized / not
 
   return (
     <div className="App">
       <header className="App-header">
-       <h1>Process Instrumentation Vocabulary</h1>
-
+        <h1>Process Instrumentation Vocabulary</h1>
       </header>
       <main>
         <div className="container">

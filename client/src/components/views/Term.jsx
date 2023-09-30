@@ -13,11 +13,11 @@ const Term = ({termObj}) => {
              <div className="en-wrapper">
                 <div className="term-en" dir="auto"><strong>{termObj[TERM_EN_KEY]}</strong></div>
              </div>
-            <hr class="text-divider"/>
+            <hr className="text-divider"/>
             <div className="heb-wrapper">
               <div className="term-heb" dir="auto">{termObj[TERM_HEB_KEY]}</div>
             </div>
-            <hr class="text-divider"/>
+            <hr className="text-divider"/>
             <div className="heb-wrapper">
               <div className="definition" dir="auto">{termObj[DEFINITION_HEB_KEY]}</div>
             </div>
