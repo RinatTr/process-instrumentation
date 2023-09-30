@@ -49,9 +49,7 @@ function App() {
   
   useEffect(() => {
      //execute filter by group 
-     if (searchInput.length) {
        setViewTerms(filterByGroup(searchedTermsCache.current, selectedGroup, groups.current))
-      } 
   },[selectedGroup])
 
   const findAndSetTerm = (selectedTermID) => {
