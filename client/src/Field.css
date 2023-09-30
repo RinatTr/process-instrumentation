@@ -4,7 +4,7 @@
   }
   
   .field > label {
-    font-size: 10px;
+    font-size: 14px;
     font-weight: 600;
     left: 14px;
     position: absolute;
@@ -24,9 +24,9 @@
   } 
 
   .field-style {
-    /* border-radius: px; */
+    border-radius: 8px;
     font-family: Paladino;
-    border: 1px solid #58a0e4;
-    font-size: 18px;
+    border: 1px solid rgb(246, 246, 246);
+    font-size: 22px;
     padding: 14px 28px 7px 14px;
   }

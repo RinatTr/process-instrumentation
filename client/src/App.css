@@ -2,16 +2,11 @@
   text-align: center;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-between;
-  
-
 }
 
 .App-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-size: calc(6px + 2vmin);
   color: white;
 }
@@ -22,8 +17,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  
+}
+
+.App-footer p {
+  font-size: calc(2px + 2vmin);
   color: white;
+  width: 90%;
 }
 
 .App-link {
@@ -32,17 +32,19 @@
 
 main {
   background-color: #ffffff;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 20px
 }
 
 .container { 
-  display: flex;
+  /* display: flex;
   flex-direction: column;
+  align-items: center; */
   width: 80vw;
-  justify-content: space-between;
-  margin: 20px;
+  /* justify-content: space-between; */
 }
 
 /* Header-Fields */
@@ -55,8 +57,6 @@ main {
 
 .header-container {
   display: flex;
-  /* flex-direction: r; */
-  /* align-items: flex-start; */
   justify-content: space-between;
   width: 80%; 
 }
@@ -66,7 +66,9 @@ main {
 .results-wrapper {
   display: flex;
   justify-content: center;
-  /* width: 100%; */
+  width: 100%;
+  height: 30vh;
+  max-height: 30vh;
   margin-top: 20px;
   margin-bottom: 20px;
 }
@@ -76,10 +78,8 @@ main {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  /* border: 1px solid #58a0e4; */
-  /* margin: 10px; */
-  height: 35vh;
-  max-height: 35vh;
+  border: 1px solid rgb(246, 246, 246);
+  border-radius: 8px;
   width: 80%; 
   overflow-y: scroll;
   overflow-x: hidden;
@@ -90,8 +90,8 @@ main {
   display: flex;
   justify-content: flex-start;
   padding: 10px;
-  padding-left: 4px
-  
+  padding-left: 4px;
+  font-size: 20px;
 }
 .results-row:hover {
   background-color:rgb(255, 230, 149);
@@ -105,22 +105,57 @@ main {
   display: flex;
   justify-content: center;
   width: 100%;
+  height: 35%;
+  max-height: 35%;
+  margin-bottom: 20px;
 }
 
 .term-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
   line-height: 1.6em;
-  /* border: 1px solid #58a0e4; */
-  height: 35vh;
-  max-height: 35vh;
+  font-size: 20px;
+  height: 100%;
   width: 80%; 
+}
+.group-name {
+  color: white;
+  background-color: #517EB9;
+  font-size: 18px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 3px;
+  margin-right: 10px;
+  margin-top: 20px;
+}
+
+.presentation-id {
+  font-size: 16px;
+}
+
+.term_en {
+  display: flex;
+  justify-content: flex-start;
 }
 
 .text-divider {
   border: none;
   border-top: 1.5px solid rgb(246, 246, 246); 
   /* margin: 20px 0;  */
-  width: 80%;
+  width: 94%;
+}
+
+.en-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+
+}
+
+.heb-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  text-align: right;
+  font-size: 24px;
 }

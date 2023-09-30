@@ -6,12 +6,21 @@ const Term = ({termObj}) => {
         { termObj.id !== undefined ? 
           (
            <div className="term-container">
-            <div className="group-name">{`${termObj[GROUP_KEY]} | ${termObj[MODULE_KEY]}`}</div>
-            <div className="term-en" dir="auto">{termObj[TERM_EN_KEY]}</div>
+             <div className="term-header"> 
+              <span className="group-name">{`${termObj[GROUP_KEY]}`}</span>
+              <span className="presentation-id">{`Presentation Number: ${termObj[MODULE_KEY]}`}</span>
+             </div>
+             <div className="en-wrapper">
+                <div className="term-en" dir="auto"><strong>{termObj[TERM_EN_KEY]}</strong></div>
+             </div>
             <hr class="text-divider"/>
-            <div className="term-heb" dir="auto">{termObj[TERM_HEB_KEY]}</div>
+            <div className="heb-wrapper">
+              <div className="term-heb" dir="auto">{termObj[TERM_HEB_KEY]}</div>
+            </div>
             <hr class="text-divider"/>
-            <div className="definition" dir="auto">{termObj[DEFINITION_HEB_KEY]}</div>
+            <div className="heb-wrapper">
+              <div className="definition" dir="auto">{termObj[DEFINITION_HEB_KEY]}</div>
+            </div>
           </div>
           ) : ""
           }       
