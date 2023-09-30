@@ -20,7 +20,6 @@ const Header = ({   groups,
     }
 
     const handleModuleClick = () => {
-        console.log("here")
         setIsSearch(false)
         setIsModule(true)
     }

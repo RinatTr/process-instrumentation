@@ -71,23 +71,25 @@ function App() {
         <h1>Process Instrumentation Vocabulary</h1>
       </header>
       <main>
-        <div className="container">
-          <Header 
-              groups={groups}
-              modules={modules}
-              selectedGroup={selectedGroup}
-              setSelectedGroup={setSelectedGroup}
-              selectedModule={selectedModule}
-              setSelectedModule={setSelectedModule}
-              searchInput={searchInput}
-              setSearchInput={setSearchInput}
-            />
-          <Results  
-              terms={viewTerms} 
-              collectTermID={findAndSetTerm} 
-            />
-          <Term termObj={populatedTerm} />
-        </div>
+      {!rawTerms.current.length 
+        ? <h1>Loading...</h1> 
+        : <div className="container">
+            <Header 
+                groups={groups}
+                modules={modules}
+                selectedGroup={selectedGroup}
+                setSelectedGroup={setSelectedGroup}
+                selectedModule={selectedModule}
+                setSelectedModule={setSelectedModule}
+                searchInput={searchInput}
+                setSearchInput={setSearchInput}
+              />
+            <Results  
+                terms={viewTerms} 
+                collectTermID={findAndSetTerm} 
+              />
+            <Term termObj={populatedTerm} />
+          </div>}  
       </main>
       <footer className="App-footer">
         <p dir="auto"> הסרת אחריות: התוכן הנמסר באתר הוא למטרת הסבר והכרה בלבד ואינו מהווה ייעוץ מקצועי. יש להבין כי שימוש במידע
