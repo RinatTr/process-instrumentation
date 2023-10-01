@@ -1,4 +1,4 @@
-import { GROUP_KEY, TERM_EN_KEY, TERM_HEB_KEY, DEFINITION_HEB_KEY, MODULE_KEY } from '../../consts';
+import { GROUP_KEY, TERM_EN_KEY, TERM_HEB_KEY, DEFINITION_HEB_KEY, MODULE_KEY, URL_KEY } from '../../consts';
 
 const Term = ({termObj}) => {
   return (
@@ -15,6 +15,7 @@ const Term = ({termObj}) => {
              </div>
             <hr className="text-divider"/>
             <div className="heb-wrapper">
+              { termObj[URL_KEY].length ?<a href={termObj[URL_KEY]} target="_blank" rel="noreferrer" className="pdf-icon"><span></span></a> : "" }
               <div className="term-heb" dir="auto">{termObj[TERM_HEB_KEY]}</div>
             </div>
             <hr className="text-divider"/>

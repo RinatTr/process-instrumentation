@@ -4,6 +4,7 @@
  const TERM_EN_KEY = "term_en"; 
  const TERM_HEB_KEY = "term_heb";
  const DEFINITION_HEB_KEY = "definition_heb";
+ const URL_KEY = "URL";
 
  function extractGroupNames(termsData) {
     return Array.from(new Set(termsData.map(term => term[GROUP_KEY]))).sort();
@@ -47,6 +48,7 @@ export {
     TERM_EN_KEY,
     TERM_HEB_KEY,
     DEFINITION_HEB_KEY,
+    URL_KEY,
     extractGroupNames,
     extractModuleNames,
     filterByGroup,
