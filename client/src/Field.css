@@ -1,6 +1,8 @@
 .field {
-    display: inline-block;
-    position: relative;    
+    display: inline-block; 
+    position: relative;   
+    width: fit-content;
+    /* max-width: 18vw; */
   }
   
   .field > label {
@@ -12,8 +14,12 @@
   }
   
   .field select {
-    width: 100%;
+    min-width: 15vw;
   } 
+
+  .field input {
+    max-width: 15vw;
+  }
   
   .custom-select {
     appearance: none;
@@ -28,5 +34,16 @@
     font-family: Paladino;
     border: 1px solid rgb(246, 246, 246);
     font-size: 22px;
-    padding: 14px 28px 7px 14px;
+    padding: 14px 14px 7px 14px;
   }
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .field select {
+    min-width: 30vw;
+  } 
+
+  .field input {
+    max-width: 30vw;
+  }
+}

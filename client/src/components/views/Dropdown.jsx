@@ -22,7 +22,7 @@ import '../../Field.css';
           className="field-style custom-select"
           value={value}
         >
-          <option value="" disabled>-select an option-</option>
+          <option value="" disabled>-select-</option>
           {options.map((option, index) => (
             <option key={index} value={option}>
               {option}
