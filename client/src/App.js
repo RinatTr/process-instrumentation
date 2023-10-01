@@ -92,16 +92,9 @@ function App() {
           </div>}  
       </main>
       <footer className="App-footer">
-        <p dir="auto"> הסרת אחריות: התוכן הנמסר באתר הוא למטרת הסבר והכרה בלבד ואינו מהווה ייעוץ מקצועי. יש להבין כי שימוש במידע
-המובא בתוך המילון, באופן כלשהו, נעשה על אחריות המשתמש בלבד .
-אין לראות בתוכן המילון חלופה לייעוץ מקצועי או לייעוץ טכני עם מומחה מוסמך בתחום הגיוס לשימוש
-בקריאה מדויקת והיערכות מדויקת של הסיטואציה. בכל מקרה של ספק או הבעת דעה המתעוררת בעקבות
-שימוש בתוכן זה, מומלץ בחום לפנות למומחה מוסמך או לייעוץ מקצועי.
-החברה אינה אחראית לנזקים או הפסדים שעלולים להיגרם כתוצאה משימוש או הסתמכות על המידע
-המובא בתוך המילון. החברה אינה מתחייבת לעדכון התוכן לאחר מילויו, ויכול להיות כי המידע המובא כאן
-יחלש בזמן או יהיה לא רלוונטי.
-שימוש באתר או המידע הנמסר בו מהווה הסכמה להסרת האחריותנו מכל תביעה או דרישה כלפי החברה
-בקשר לשימוש כלשהו בתוכן המילון. לצורך בדיקת שימוש כלשהו נדרש לפנות למנהל האתר.</p>
+        <p dir="auto"> Disclaimer: The content presented on this website is intended solely for explanatory and informational purposes and should not be considered professional advice. Users must understand that any utilization of the information provided in this dictionary is done at their own risk and responsibility. The contents of the dictionary should not be regarded as a substitute for seeking guidance from a qualified expert in the field for precise interpretation and appropriate application to specific situations. In the event of any uncertainty or difference of opinion arising from the use of this content, we strongly recommend consulting a qualified expert for professional advice.
+
+Our company disclaims any responsibility for any damages or losses that may occur as a result of relying on or using the information provided in this dictionary. We do not commit to updating the content after it has been posted, and over time, the information presented may become outdated or irrelevant. By using this website or the information contained within it, you acknowledge that you release our company from any claims or demands related to the usage of the dictionary content. For inquiries regarding usage, please contact the site administrator.</p>
       </footer>
     </div>
   );
