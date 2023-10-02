@@ -40,10 +40,12 @@
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
   .field select {
-    min-width: 30vw;
+    min-width: 40vw;
+    max-width: 40vw;
   } 
 
   .field input {
+    min-width: 30vw;
     max-width: 30vw;
   }
 }
