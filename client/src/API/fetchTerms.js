@@ -4,7 +4,7 @@
 
     
 */
-const URL = `https://script.google.com/macros/s/AKfycbxyYOgUpObCqLMC0R-ea3nxy84a9o7cpnSEZIpbrxZwVYsxMubtAQgwowroD3Xb5ndS/exec`;
+const URL = `https://script.google.com/macros/s/AKfycbwiB7jQkQD7BBBQ2oTLqNO69GUtGO1uC1SKy5gotlEQM9tQ8EFAwBzauxKFJRrLlTcD/exec`;
 
 const fetchTerms = async () => {
   try {
