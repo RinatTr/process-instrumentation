@@ -1,11 +1,12 @@
+
 import './App.css';
 import fetchTerms from './API/fetchTerms'
 import { extractGroupNames, extractModuleNames, filterByGroup, filterBySearchInput, filterByModule } from './consts';
 import { useEffect, useState, useRef } from "react";
+
 import Header from './components/views/Header';
 import Results from './components/views/Results';
 import Term from './components/views/Term';
-
 
 function App() {
 

@@ -62,19 +62,8 @@ main {
   justify-content: flex-start;
 }
 
-/* Filter Selector */
-
-.selector {
-  border: 1px solid rgb(246, 246, 246);
-  min-width: 40px;
-  border-radius: 60% 0 0;
-}
-.selector:hover {
-  background-color: rgb(255, 230, 149);
-}
-
-.selected {
-  background-color: rgb(255, 230, 149);
+.divider {
+  margin: 20px;
 }
 
 /* Results Component */

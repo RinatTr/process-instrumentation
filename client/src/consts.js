@@ -42,7 +42,26 @@ function filterByModule(terms, moduleId, modules) {
         });
 }
 
+const TEST_DATA = [
+    {
+        [GROUP_KEY]: "Instrument",
+        [MODULE_KEY]: 5,
+        [TERM_EN_KEY]: "Gas",
+        [TERM_HEB_KEY]: "גז",
+        [DEFINITION_HEB_KEY]: "גזוז מגזז גיזוזים",
+        [URL_KEY]: "www.example.com"
+    },
+    {
+        [GROUP_KEY]: "Callibration",
+        [MODULE_KEY]: 5,
+        [TERM_EN_KEY]: "Bar",
+        [TERM_HEB_KEY]: "גז",
+        [DEFINITION_HEB_KEY]: "גזוז מגזז גיזוזים",
+        [URL_KEY]: ""
+    }
+]
 export {
+    TEST_DATA,
     GROUP_KEY,
     MODULE_KEY,
     TERM_EN_KEY,
