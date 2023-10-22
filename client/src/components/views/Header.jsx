@@ -43,7 +43,7 @@ const Header = ({   groups,
                 <Space className="header-selector-container">   
                     <Checkbox onChange={handleModuleClick} checked={isModule}/>   
                         <DropdownWrapper 
-                            label={"Filter by Module"}
+                            label={"filter by module"}
                             options={modules}
                             value={selectedModule}
                             setSelected={setSelectedModule} 

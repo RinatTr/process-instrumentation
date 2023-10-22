@@ -7,21 +7,14 @@
 }
 
 .App-header {
-  font-size: calc(6px + 2vmin);
+  background-color: #1d4e8f;
+  width: 100%;
+  font-size: calc(8px + 2vmin);
   color: white;
 }
 
 .App-footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-}
-
-.App-footer p {
-  font-size: calc(2px + 2vmin);
-  color: white;
-  width: 90%;
+  direction: rtl;
 }
 
 .App-link {
@@ -64,6 +57,7 @@ main {
 
 .divider {
   margin: 20px;
+  font-weight: bold;
 }
 
 /* Results Component */
