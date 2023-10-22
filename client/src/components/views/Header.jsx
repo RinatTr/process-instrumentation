@@ -1,6 +1,7 @@
 import { useState } from "react";
-import Dropdown from "./Dropdown";
-import Input from "./Input";
+import { Space, Checkbox, Divider } from 'antd';
+import DropdownWrapper from "./DropdownWrapper";
+import InputWrapper from "./InputWrapper";
 
 const Header = ({   groups, 
                     modules, 
@@ -26,31 +27,29 @@ const Header = ({   groups,
     return (
         <div className="header-wrapper">
             <div className="header-container">
-                <div className="header-selector-container">
-                    <div onClick={handleSearchClick} className={`selector search-filter${isSearch ? " selected" : ""}`}></div>
-                    <Input 
+                <Space direction="horizontal" className="header-selector-container">
+                    <Checkbox onChange={handleSearchClick} checked={isSearch}/>
+                    <InputWrapper 
                         value={searchInput}
                         setInput={setSearchInput} 
                         isDisabled={isModule}
-                    />
-                    <Dropdown 
-                        label={"Filter by group"}
                         options={groups}
-                        value={selectedGroup}
+                        valueGroup={selectedGroup}
                         setSelected={setSelectedGroup} 
-                        isDisabled={isModule || !searchInput.length}
-                    /> 
-                </div>
-                <div className="header-selector-container">
-                    <div onClick={handleModuleClick} className={`selector module-filter${isModule ? " selected" : ""}`}></div>   
-                    <Dropdown 
-                        label={"View by Module"}
-                        options={modules}
-                        value={selectedModule}
-                        setSelected={setSelectedModule} 
-                        isDisabled={isSearch}
-                    /> 
-                </div>
+                        isDisabledGroup={isModule || !searchInput.length}
+                    />
+                </Space>
+                <span className="divider" margin={"20px"}>OR</span>
+                <Space className="header-selector-container">   
+                    <Checkbox onChange={handleModuleClick} checked={isModule}/>   
+                        <DropdownWrapper 
+                            label={"filter by module"}
+                            options={modules}
+                            value={selectedModule}
+                            setSelected={setSelectedModule} 
+                            isDisabled={isSearch}
+                        /> 
+                </Space>
             </div>
         </div>
     )

@@ -4,6 +4,8 @@
 
     
 */
+import { TEST_DATA } from "../consts";
+
 const URL = `https://script.google.com/macros/s/AKfycbwiB7jQkQD7BBBQ2oTLqNO69GUtGO1uC1SKy5gotlEQM9tQ8EFAwBzauxKFJRrLlTcD/exec`;
 
 const fetchTerms = async () => {
@@ -21,5 +23,7 @@ const fetchTerms = async () => {
       console.log("Error during fetching terms", e);
   }
 }
+
+// const fetchTerms = () => {return TEST_DATA};
 
 export default fetchTerms;

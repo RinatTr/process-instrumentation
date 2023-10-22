@@ -1,51 +1,21 @@
 .field {
     display: inline-block; 
     position: relative;   
-    width: fit-content;
-    /* max-width: 18vw; */
-  }
-  
-  .field > label {
-    font-size: 14px;
-    font-weight: 600;
-    left: 14px;
-    position: absolute;
-    top: 3px;
-  }
-  
-  .field select {
     min-width: 15vw;
-  } 
+  }
 
   .field input {
     max-width: 15vw;
   }
-  
-  .custom-select {
-    appearance: none;
-    background-image: url(data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E);
-    background-repeat: no-repeat;
-    background-position: right 0.7em top 50%;
-    background-size: 0.65em auto;
-  } 
-
-  .field-style {
-    border-radius: 8px;
-    font-family: Paladino;
-    border: 1px solid rgb(246, 246, 246);
-    font-size: 22px;
-    padding: 14px 14px 7px 14px;
-  }
 
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
-  .field select {
+
+  .field {
     min-width: 40vw;
-    max-width: 40vw;
   } 
 
   .field input {
-    min-width: 30vw;
     max-width: 30vw;
   }
 }

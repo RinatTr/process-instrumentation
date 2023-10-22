@@ -1,4 +1,5 @@
 import '../../Field.css';
+import { Select } from 'antd';
 /**
  * Renders a dropdown element.
  * @param {<!Array<string>} options - The select options.
@@ -8,29 +9,30 @@ import '../../Field.css';
  * @return {!React.ReactElement}
  */
 
- const Dropdown = ({ value, options, label, setSelected, isDisabled}) => {
-    const handleChange = (e) => {
-      setSelected(e.target.value);
+ const { Option } = Select; 
+
+ const DropdownWrapper = ({ value, options, label, setSelected, isDisabled}) => {
+    const handleChange = (value) => {
+      setSelected(value);
     };
 
+    
     return (
-      <div className="field dropdown">
-        <label>{label}</label>
-        <select
+        <Select
           disabled={isDisabled} 
-          onChange={(e) => handleChange(e)}
-          className="field-style custom-select"
+          onChange={(value) => handleChange(value)}
           value={value}
+          size={"large"}
+          className={"field"}
         >
-          <option value="" disabled>-select-</option>
+          <Option value="" disabled>{label}</Option>
           {options.map((option, index) => (
-            <option key={index} value={option}>
+            <Option key={index} value={option}>
               {option}
-            </option>
+            </Option>
           ))}
-        </select>
-      </div>
+        </Select>
     );
   };
   
-  export default Dropdown;
+  export default DropdownWrapper;

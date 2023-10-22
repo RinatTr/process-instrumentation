@@ -8,7 +8,7 @@ const Term = ({termObj}) => {
            <div className="term-container">
              <div className="term-header"> 
               <span className="group-name">{`${termObj[GROUP_KEY]}`}</span>
-              <span className="presentation-id">{`Presentation Number: ${termObj[MODULE_KEY]}`}</span>
+              <span className="presentation-id">{`Module Num.: ${termObj[MODULE_KEY]}`}</span>
              </div>
              <div className="en-wrapper">
                 <div className="term-en" dir="auto"><strong>{termObj[TERM_EN_KEY]}</strong></div>
