@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Space, Checkbox, Divider } from 'antd';
+import { Space, Radio } from 'antd';
 import DropdownWrapper from "./DropdownWrapper";
 import InputWrapper from "./InputWrapper";
 
@@ -28,7 +28,7 @@ const Header = ({   groups,
         <div className="header-wrapper">
             <div className="header-container">
                 <Space direction="horizontal" className="header-selector-container">
-                    <Checkbox onChange={handleSearchClick} checked={isSearch}/>
+                    <Radio onChange={handleSearchClick} checked={isSearch}/>
                     <InputWrapper 
                         value={searchInput}
                         setInput={setSearchInput} 
@@ -41,7 +41,7 @@ const Header = ({   groups,
                 </Space>
                 <span className="divider" margin={"20px"}>OR</span>
                 <Space className="header-selector-container">   
-                    <Checkbox onChange={handleModuleClick} checked={isModule}/>   
+                    <Radio onChange={handleModuleClick} checked={isModule}/>   
                         <DropdownWrapper 
                             label={"filter by module"}
                             options={modules}
