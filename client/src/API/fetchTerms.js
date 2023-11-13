@@ -6,7 +6,7 @@
 */
 import { TEST_DATA } from "../consts";
 
-const URL = `https://script.google.com/macros/s/AKfycbwiB7jQkQD7BBBQ2oTLqNO69GUtGO1uC1SKy5gotlEQM9tQ8EFAwBzauxKFJRrLlTcD/exec`;
+const URL = `https://script.google.com/macros/s/AKfycbxbuFfvOmncutqq_InwRgKHYSL5hVQaqp8Umyyw3W_VMNZ2XqHgrlaPTcgYkfUPleck/exec`;
 
 const fetchTerms = async () => {
   try {
