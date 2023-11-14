@@ -3,6 +3,8 @@ import './App.css';
 import fetchTerms from './API/fetchTerms'
 import { extractGroupNames, extractModuleNames, filterByGroup, filterBySearchInput, filterByModule } from './consts';
 import { useEffect, useState, useRef } from "react";
+import { LoadingOutlined } from '@ant-design/icons';
+import { Spin } from 'antd';
 
 import Header from './components/views/Header';
 import Results from './components/views/Results';
@@ -75,7 +77,7 @@ function App() {
       </header>
       <main>
       {!rawTerms.current.length 
-        ? <h1>Loading...</h1> 
+        ? <Spin indicator={<LoadingOutlined style={{ fontSize: 40 }} spin />} /> 
         : <div className="container">
             <Header 
                 groups={groups}
