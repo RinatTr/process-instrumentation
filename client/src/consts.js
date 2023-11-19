@@ -22,11 +22,10 @@
 }
 
 function filterByModule(terms, moduleId, modules) {
-    let parsed = parseFloat(moduleId);
     //check for reset
-    if (!modules.includes(parsed)) return terms;
+    if (!modules.includes(moduleId)) return terms;
 
-    return terms.filter(term => term[MODULE_KEY] === parsed);
+    return terms.filter(term => term[MODULE_KEY] === moduleId);
 }
 
  function filterBySearchInput(rawTerms, searchInput) {
