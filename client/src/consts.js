@@ -1,3 +1,4 @@
+import naturalSort from 'natural-sort';
 // Extracts group names from raw terms data
  const GROUP_KEY = "group_en";
  const MODULE_KEY = "presentation_ID";
@@ -11,7 +12,7 @@
 }
 
  function extractModuleNames(termsData) {
-    return Array.from(new Set(termsData.map(term => term[MODULE_KEY]))).sort();
+    return Array.from(new Set(termsData.map(term => term[MODULE_KEY]))).sort(naturalSort());
 }
 
  function filterByGroup(terms, group, groups) {
