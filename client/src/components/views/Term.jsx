@@ -9,7 +9,7 @@ const Term = ({termObj}) => {
              <div className="term-header"> 
               <span className="group-name">{`${termObj[GROUP_KEY]}`}</span>
               <span className="presentation-id">{`Module: ${termObj[MODULE_KEY]}`}
-              { termObj[URL_KEY].length ? <a href={termObj[URL_KEY]} target="_blank" rel="noreferrer" className="pdf-icon"><span></span></a> : "" }
+              { termObj[URL_KEY].length ? <a href={termObj[URL_KEY]} target="_blank" rel="noreferrer" className="youtube-icon"><span></span></a> : "" }
               </span>
               
              </div>
