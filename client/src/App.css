@@ -14,8 +14,10 @@
 }
 
 .App-footer {
+  margin-top: 10px;
   direction: rtl;
   text-align: justify;
+  
 }
 
 .App-link {
@@ -34,6 +36,12 @@ main {
 
 .container { 
   width: 80vw;
+}
+
+links {
+  margin-top:30px;
+  display: flex;
+  gap: 10px;
 }
 /* Header-Fields */
 

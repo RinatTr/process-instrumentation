@@ -96,6 +96,10 @@ function App() {
             <Term termObj={populatedTerm} />
           </div>}  
       </main>
+      <links>
+        <div><a href={"https://www.youtube.com/watch?v=_dbtlDc0dY4"} target="_blank" rel="noreferrer" className="youtube-link"><span>הצצה לתכני קורס מכשור ובקרה</span></a></div>
+        <div><a href={"https://www.youtube.com/watch?v=do2pCSqg-ik"} target="_blank" rel="noreferrer" className="youtube-link"><span>מדריך למשתמש באתר (לצפייה)</span></a></div>
+      </links>
       <footer className="App-footer">
         <Disclaimer />
       </footer>
